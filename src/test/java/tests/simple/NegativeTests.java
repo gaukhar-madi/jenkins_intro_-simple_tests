@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class NegativeTests {
 
+    //Jenkins Introduction Lesson
     @Test
     void someTest() {
         assertTrue(false);
