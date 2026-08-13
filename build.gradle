@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group = 'org.example'
@@ -7,6 +8,22 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+
+allure {
+    report {
+        version.set("2.32.0")
+    }
+    adapter {
+        // Указываем, использовать ли аспекты для @Step (по умолчанию true)
+        aspectjWeaver.set(true)
+        // Автоматически добавлять фреймворк спикера (JUnit 5)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.32.0")
+            }
+        }
+    }
 }
 
 dependencies {
